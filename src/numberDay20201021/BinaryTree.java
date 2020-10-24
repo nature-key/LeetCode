@@ -14,8 +14,6 @@ public class BinaryTree {
         nodes = new TreeNode[size];
         //构建树节点
         for (int i = 0; i <arrays.length; i++) {
-//            nodes[i]=new TreeNode();
-//            nodes[i].setValue(arrays[i]);
             nodes[i]=new TreeNode(arrays[i]);
         }
         for (int i = 0; i < (size - 2) / 2; i++) {

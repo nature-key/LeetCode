@@ -35,11 +35,17 @@ public class ValidTreeNode {
     }
 
     public static void main(String[] args) {
-        Integer[] a= {3,1,5,null,null,2};
+//        Integer[] a= {3,1,5,null,null,2};
+//        BinaryTree binaryTree = new BinaryTree(a);
+//
+//        boolean validBST = isValidBST(binaryTree.getRoot());
+//        System.out.println(validBST);
+
+        Integer[] a={2,3,5,6};
+
         BinaryTree binaryTree = new BinaryTree(a);
 
-        boolean validBST = isValidBST(binaryTree.getRoot());
-        System.out.println(validBST);
+        System.out.println(binaryTree.nodes[1].getLnode());
 
     }
 }
