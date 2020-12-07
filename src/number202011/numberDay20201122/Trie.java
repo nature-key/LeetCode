@@ -9,7 +9,7 @@ public class Trie {
         root.val = ' ';
     }
 
-    private void insert(String word) {
+    public void insert(String word) {
         TrieNode ws = root;
         for (int i = 0; i < word.length(); i++) {
             char c = word.charAt(i);
@@ -21,7 +21,7 @@ public class Trie {
         ws.isEnd = true;
     }
 
-    private boolean search(String word) {
+    public boolean search(String word) {
         TrieNode ws = root;
         for (int i = 0; i < word.length(); i++) {
             char c = word.charAt(i);
@@ -34,7 +34,7 @@ public class Trie {
     }
 
 
-    private boolean startWith(String word) {
+    public boolean startWith(String word) {
         TrieNode ws = root;
         for (int i = 0; i < word.length(); i++) {
             char c = word.charAt(i);
