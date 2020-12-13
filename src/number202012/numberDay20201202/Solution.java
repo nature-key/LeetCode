@@ -1,4 +1,4 @@
-package number202012;
+package number202012.numberDay20201202;
 
 import number202011.numberDay20201122.Trie;
 
