@@ -1,4 +1,4 @@
-package test;
+package juc.test;
 
 
 import java.util.regex.Pattern;
