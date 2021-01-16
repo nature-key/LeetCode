@@ -11,9 +11,11 @@ public class Singleton4 {
 
 
     private enum Singleon {
-        SINGLEON_SINGLE;
 
+        SINGLEON_SINGLE;
         private Singleton4 singleton4;
+
+
 
         Singleon() {
             singleton4 = new Singleton4();
