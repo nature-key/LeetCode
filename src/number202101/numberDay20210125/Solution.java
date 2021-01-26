@@ -27,16 +27,16 @@ public class Solution {
     private static List<List<Integer>> getSum3(int[] num) {
         int[] result = new int[3];
         Arrays.sort(num);
-        List<List<Integer>> res=new ArrayList<>();
+        List<List<Integer>> res = new ArrayList<>();
 
-        for (int i = 0; i <num.length - 2; i++) {
-            if(i>0&&num[i-1]==num[i]) continue;
-            for (int j = i+1; j <num.length - 1; j++) {
-                if(j>i+1&&num[j]==num[j-1])continue;
-                for (int k = j+1; k <num.length; k++) {
-                    if(k<j+1&&num[k]==num[k-1])continue;
+        for (int i = 0; i < num.length - 2; i++) {
+            if (i > 0 && num[i - 1] == num[i]) continue;
+            for (int j = i + 1; j < num.length - 1; j++) {
+                if (j > i + 1 && num[j] == num[j - 1]) continue;
+                for (int k = j + 1; k < num.length; k++) {
+                    if (k < j + 1 && num[k] == num[k - 1]) continue;
                     if (num[i] + num[j] + num[k] == 0) {
-                        res.add(Arrays.asList(num[i],num[j],num[k]));
+                        res.add(Arrays.asList(num[i], num[j], num[k]));
 //                        return result;
                     }
                 }
@@ -46,33 +46,51 @@ public class Solution {
 
     }
 
-    private static  List<List<Integer>> getSumT3(int[] sum){
+    private static List<List<Integer>> getSumT3(int[] nums) {
+        if (nums != null || nums.length <= 2) {
+            Collections.emptyList();
+        }
+        Set<List<Integer>> result = new HashSet();
+        for (int i = 0; i < nums.length - 2; i++) {
+            int target = 0 - nums[i];
+            Map<Integer, Integer> map = new HashMap<>();
+            for (int j = 0; j < nums.length - 1; j++) {
+                int v = target - nums[j];
+                if (map.containsKey(v)) {
+                    result.add(Arrays.asList(nums[i], nums[j], target));
+                } else {
+                    map.put(nums[j], nums[j]);
+                }
+            }
 
+        }
+
+        return new ArrayList<>(result);
     }
 
 
-    private static List<List<Integer>> getSumThree(int[] num){
+    private static List<List<Integer>> getSumThree(int[] num) {
         Arrays.sort(num);
-        List<List<Integer>> res=new ArrayList<>();
-        for (int i = 0; i < num.length-2; i++) {
-            if (i==0||(i>0&&num[i]!=num[i-1])) {
-                int l=i+1;
-                int r=num.length-1;
-                int sum =0-num[i];
-                while (l<r){
-                    if (num[l]+num[r]==sum) {
-                        res.add(Arrays.asList(num[i],num[l],num[r]));
-                        while (l<r&&num[l]==num[l+1]){
+        List<List<Integer>> res = new ArrayList<>();
+        for (int i = 0; i < num.length - 2; i++) {
+            if (i == 0 || (i > 0 && num[i] != num[i - 1])) {
+                int l = i + 1;
+                int r = num.length - 1;
+                int sum = 0 - num[i];
+                while (l < r) {
+                    if (num[l] + num[r] == sum) {
+                        res.add(Arrays.asList(num[i], num[l], num[r]));
+                        while (l < r && num[l] == num[l + 1]) {
                             l++;
                         }
-                        while (l<r&&num[r]==num[r-1]){
+                        while (l < r && num[r] == num[r - 1]) {
                             r--;
                         }
                         l++;
                         r--;
-                    }else if(num[l]+num[r]>sum){
+                    } else if (num[l] + num[r] > sum) {
                         r--;
-                    }else {
+                    } else {
                         l++;
                     }
 
@@ -92,18 +110,24 @@ public class Solution {
 //        }
 //
 //
-        int[] nums={-1,0,1,2,-1,-4};
+        int[] nums = {-1, 0, 1, 2, -1, -4};
 
         List<List<Integer>> sum3 = getSum3(nums);
-        sum3.forEach(it->{
+        sum3.forEach(it -> {
             System.out.println(it);
         });
 
         System.out.println("=========");
         List<List<Integer>> sumThree = getSumThree(nums);
-        sumThree.forEach(it->{
+        sumThree.forEach(it -> {
             System.out.println(it);
         });
+        System.out.println("--------");
+        List<List<Integer>> sumT3 = getSumT3(nums);
+        sumT3.forEach(it->{
+            System.out.println(it);
+        });
+
 
 
     }
