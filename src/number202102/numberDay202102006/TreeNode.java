@@ -10,11 +10,11 @@ import java.util.List;
 public class TreeNode {
 
 
-    private Integer val;
+    public Integer val;
 
-    private TreeNode left;
+    public TreeNode left;
 
-    private TreeNode right;
+    public TreeNode right;
 
     private TreeNode root;
 
