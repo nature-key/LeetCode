@@ -1,6 +1,4 @@
-package number202102.numberDay202102006;
-
-import number202102.INFO;
+package number202102.numberDay20210206;
 
 import java.util.ArrayList;
 import java.util.Deque;
