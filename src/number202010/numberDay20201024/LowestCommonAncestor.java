@@ -35,7 +35,7 @@ public class LowestCommonAncestor {
         TreeNode p =new TreeNode(2);
         TreeNode q =new TreeNode(4);
         LowestCommonAncestor lowestCommonAncestor =new LowestCommonAncestor();
-//        TreeNode lowestCommonAncestor1 = lowestCommonAncestor.getLowestCommonAncestor(binarySearchTree.getRoot(), p, q);
+//        Node lowestCommonAncestor1 = lowestCommonAncestor.getLowestCommonAncestor(binarySearchTree.getRoot(), p, q);
         TreeNode lowestCommonAncestor2 = lowestCommonAncestor.getLowestCommonAncestor2(binarySearchTree.getRoot(), p, q);
 
 //        System.out.println(lowestCommonAncestor1.getData());
