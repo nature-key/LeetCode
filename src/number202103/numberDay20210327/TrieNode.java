@@ -34,4 +34,12 @@ public class TrieNode {
     public void setEnd(boolean end) {
         isEnd = end;
     }
+
+    public TrieNode[] getLinks() {
+        return links;
+    }
+
+    public void setLinks(TrieNode[] links) {
+        this.links = links;
+    }
 }

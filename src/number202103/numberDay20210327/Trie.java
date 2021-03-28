@@ -1,8 +1,10 @@
 package number202103.numberDay20210327;
 
+import java.security.PublicKey;
+
 public class Trie {
 
-    private TrieNode root=new TrieNode();
+    private TrieNode root = new TrieNode();
 
     public Trie() {
     }
@@ -50,11 +52,26 @@ public class Trie {
         return node;
     }
 
+//    public void getCurrentRoot(char ch) {
+//        int index = ch - 'a';
+//        TrieNode link = root.getLinks()[index];
+//        this.setRoot(link);
+//    }
+
+
     /**
      * Returns if there is any word in the trie that starts with the given prefix.
      */
     public boolean startsWith(String prefix) {
         TrieNode node = serachprefix(prefix);
         return node != null;
+    }
+
+    public TrieNode getRoot() {
+        return root;
+    }
+
+    public void setRoot(TrieNode root) {
+        this.root = root;
     }
 }
