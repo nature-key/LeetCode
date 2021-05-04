@@ -54,7 +54,7 @@ public class Solution1 {
         return cnt;
     }
 
-    public int reversePairs(int[] nums) {
+    public int reversePairs1(int[] nums) {
         if (nums == null || nums.length == 0) {
             return 0;
         }
