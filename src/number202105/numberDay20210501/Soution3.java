@@ -1,4 +1,4 @@
-package number202105;
+package number202105.numberDay20210501;
 
 public class Soution3 {
 
