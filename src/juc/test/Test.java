@@ -25,7 +25,11 @@ public class Test {
                 .filter(it -> it > 40)
                 .sorted()
                 .toArray();
+        int i=0;
+        while (true){
 
+            System.out.println(i++);
+        }
 
     }
 
