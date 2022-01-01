@@ -34,6 +34,10 @@ public class 两两交换链表中的节点 {
         return dump.next;
     }
 
+    /**
+     *
+     * @param args
+     */
 
     public static void main(String[] args) {
         int [] values={1,2,3,4,5};
