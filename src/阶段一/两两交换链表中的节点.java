@@ -34,6 +34,24 @@ public class 两两交换链表中的节点 {
         return dump.next;
     }
 
+
+    private static  ListNode swap(ListNode head){
+        ListNode dump = new ListNode(-1);
+        dump.next=head;
+
+        for (ListNode p= dump;p.next!=null&&p.next.next!=null;){
+            ListNode a= p.next;
+            ListNode b =p.next.next;
+            p.next=b;
+            a.next=b.next;
+            b.next=a;
+            p=a;
+        }
+
+        return dump.next;
+
+    }
+
     /**
      * test
      *
@@ -44,7 +62,7 @@ public class 两两交换链表中的节点 {
         int [] values={1,2,3,4,5};
         ListNodeUtil.addNodes(values);
         ListNode head = ListNodeUtil.getHead();
-        ListNode listNode = swapPairs(head);
+        ListNode listNode = swap(head);
         ListNodeUtil.setHead(listNode);
         ListNodeUtil.print();
     }
