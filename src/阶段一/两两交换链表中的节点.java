@@ -3,6 +3,10 @@ package 阶段一;
 import 基础数据结构.ListNode;
 import 基础数据结构.ListNodeUtil;
 
+/**
+ * https://leetcode-cn.com/problems/swap-nodes-in-pairs/solution/24-liang-liang-jiao-huan-lian-biao-zhong-2kiy/
+ *
+ */
 public class 两两交换链表中的节点 {
 
     public static ListNode swapPairs(ListNode head){
