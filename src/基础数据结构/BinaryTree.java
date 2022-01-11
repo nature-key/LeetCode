@@ -5,7 +5,7 @@ package 基础数据结构;
  */
 public class BinaryTree {
 
-    private TreeNode root = null;
+    public TreeNode root = null;
 
     private   void insert(int key){
         if (root == null) {
@@ -36,7 +36,7 @@ public class BinaryTree {
         }
     }
 
-    private void  inserts(int[] keys){
+    public void  inserts(int[] keys){
         for (int key : keys) {
             insert(key);
         }
@@ -56,7 +56,7 @@ public class BinaryTree {
     }
 
 
-    private void midOrder(){
+    public void midOrder(){
         mOrder(root);
     }
     private  void mOrder(TreeNode head){
