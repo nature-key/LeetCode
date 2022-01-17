@@ -2,7 +2,7 @@ package 基础数据结构;
 
 public class TreeNode {
 
-    public int val;
+    public Integer val;
 
     public TreeNode left;
 
