@@ -17,9 +17,8 @@ public class PowN {
         if (n % 2 == 0) {
             return myPow(x * x, n / 2);
             //奇数 2^5=(2^4)*2
-        } else {
-            return myPow(x, n / 2) * 2;
         }
+        return myPow(x, n - 1) * x;
     }
 
     public double myPow1(double x, int n) {
@@ -27,7 +26,7 @@ public class PowN {
             return 0.0d;
         }
         double result = 1.0;
-        long b=n;
+        long b = n;
         if (b < 0) {
             x = 1 / x;
             b = -b;
@@ -44,6 +43,11 @@ public class PowN {
             b >>= 1;
         }
         return result;
+    }
+
+    public static void main(String[] args) {
+        PowN powN = new PowN();
+        System.out.println(powN.myPow(2, 5));
     }
 
 
