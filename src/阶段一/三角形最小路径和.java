@@ -27,8 +27,7 @@ public class 三角形最小路径和 {
         return dp[0];
     }
 
-
-    public static int minimumTotal1(List<List<Integer>> triangle) {
+    public static synchronized int minimumTotal1(List<List<Integer>> triangle) {
         int[] dp = new int[triangle.size()];
 
         for (int i = triangle.size() - 1; i >= 0; i--) {
@@ -36,6 +35,7 @@ public class 三角形最小路径和 {
                 dp[j]=triangle.get(i).get(j)+Math.min(dp[j],dp[j+1]);
             }
         }
+
         return dp[0];
     }
 
