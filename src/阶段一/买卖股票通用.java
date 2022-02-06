@@ -14,6 +14,7 @@ public class 买卖股票通用 {
         }
         for (int i = 1; i < n; i++) {
             for (int k = 1; k <= K; k++) {
+                //交易次数，每次交易包含买入和卖出 这里记录买入才会记录一次交易
                 dp[i][0][k]=Math.max(dp[i-1][0][k],dp[i-1][1][k]+prices[i]);
                 dp[i][1][k]=Math.max(dp[i-1][1][k],dp[i-1][0][k-1]-prices[i]);
             }
