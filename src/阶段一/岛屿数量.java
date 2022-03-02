@@ -12,7 +12,7 @@ public class 岛屿数量 {
                 }
             }
         }
-
+        return count;
     }
 
     public void dfs(char[][] grid, int i, int j) {
