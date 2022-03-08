@@ -27,4 +27,27 @@ public class 买卖股票通用 {
         int k=2;
         System.out.println(maxProfit(k, prices));
     }
+
+    public static  int maxProfit1(int K, int[] prices) {
+        int n = prices.length;
+
+        int[][][] dp = new int[n][2][K+1];
+        K=Math.min(K,n/2);
+
+        for (int i = 0; i < K; i++) {
+            dp[0][0][K]=0;
+            dp[0][1][K]=-prices[0];
+
+        }
+        for (int i = 1; i < n; i++) {
+            for (int k = 1; k <=K; k++) {
+                dp[i][0][k]=Math.max(dp[i-1][0][k],dp[i-1][1][k-1]+prices[i]);
+                dp[i][1][k]=Math.max(dp[i-1][1][k],dp[i-1][0][k-1]-prices[i]);
+            }
+        }
+
+        return dp[n-1][0][K];
+
+
+    }
 }
