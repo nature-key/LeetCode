@@ -51,4 +51,19 @@ public class 有效的括号 {
         System.out.println(isValid("([)]"));
         System.out.println(isValid1("([)]"));
     }
+
+
+    public boolean isValied(String str){
+
+        char[] chars = str.toCharArray();
+        for (char aChar : chars) {
+            String s=String.valueOf(aChar);
+            if(!map.containsKey(s)){
+               stack.push(s);
+            }else if(stack.isEmpty()||!map.get(s).equals(stack.pop())){
+                return false;
+            }
+        }
+        return stack.isEmpty();
+    }
 }
