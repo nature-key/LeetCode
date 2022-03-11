@@ -27,10 +27,10 @@ public class 最小栈 {
     }
 
     public int getMin(){
-        minStack.peek();
+      return   minStack.peek();
     }
 
     public int top(){
-        stack.peek();
+       return stack.peek();
     }
 }
