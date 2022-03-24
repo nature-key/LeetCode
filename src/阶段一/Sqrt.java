@@ -27,6 +27,7 @@ public class Sqrt {
 
     /**
      * 牛顿迭代法
+     *
      * @param x
      * @return
      */
@@ -44,6 +45,29 @@ public class Sqrt {
     }
 
 
+    public int sqrt11(int x) {
+        if (x == 0 || x == 1) {
+            return x;
+        }
+
+        int left = 0;
+        int right = x;
+        int res = 0;
+
+        while (left <= right) {
+
+            int mid = (right - left) / 2;
+            if (mid == x / mid) {
+                return mid;
+            } else if (mid > x / mid) {
+                right = mid - 1;
+            } else {
+                left = mid + 1;
+                res = mid;
+            }
+        }
+        return res;
+    }
 
 
 }

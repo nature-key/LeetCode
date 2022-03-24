@@ -30,9 +30,22 @@ public class 验证二叉搜索树 {
         //左子树的节点大于他的所有子节点，右子树的节点小于他的所有节点
         return isValiedBST(node.left,min,node.val)&&isValiedBST(node.right,node.val,max);
 
+    }
 
 
 
+    public boolean isValueTree(TreeNode root,int min,int max){
+        if (root==null) {
+            return false;
+        }
+        if(root.val<=min||root.val >=max){
+            return false;
+        }
+        return isValueTree(root.left,min,root.val)&&isValueTree(root.right,root.val,max);
+    }
+
+    public boolean test(TreeNode treeNode){
+        return isValueTree(treeNode,Integer.MIN_VALUE,Integer.MAX_VALUE);
     }
 
 

@@ -73,7 +73,7 @@ public class 三数之和 {
     }
 
 
-    public List<List<Integer>> threeSum(int[] nums){
+    public List<List<Integer>> threeSum11(int[] nums){
 
         List<List<Integer>> result = new ArrayList<>();
 
@@ -83,7 +83,7 @@ public class 三数之和 {
 
         for (int i = 0; i < nums.length; i++) {
             if (nums[i]>0) {
-                break;;
+                break;
             }
             if(nums[i]==nums[i-1]){
                 continue;

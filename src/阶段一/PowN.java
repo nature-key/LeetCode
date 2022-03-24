@@ -48,7 +48,31 @@ public class PowN {
     public static void main(String[] args) {
         PowN powN = new PowN();
         System.out.println(powN.myPow(2, 5));
+
+        System.out.println(powN.myPOW1(2,5));
     }
+
+
+    public double pow1(double x, int n) {
+        if (n == 0) {
+            return 1;
+        }
+        double sub = pow1(x, n / 2);
+        return n % 2 == 0 ? sub * sub : sub * sub * x;
+    }
+
+    public double myPOW1(double x ,int n){
+         if(n<0){
+             x=1/x;
+             n=-n;
+         }
+        return pow1(x,n);
+
+    }
+
+
+
+
 
 
 }
