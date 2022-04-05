@@ -43,4 +43,30 @@ public class 三角形最小路径和 {
     public static void main(String[] args) {
 
     }
+
+    public int minimumTotal_min(List<List<Integer>> triangle) {
+        int[] dp = new int [triangle.size()];
+        for (int i = triangle.size()-1; i >= 0; i--) {
+            for (int j = 0; j < triangle.get(i).size(); j++) {
+                dp[j]=Math.min(dp[j],dp[j+1])+triangle.get(i).get(j);
+            }
+        }
+       return dp[0];
+    }
+
+    public int minimumTotal_1min(List<List<Integer>> triangle) {
+        int size = triangle.size();
+        int [][] dp = new int[size+1][size+1];
+        for (int i = size-1; i > 0; i--) {
+            for (int j = 0; j <= i; j++) {
+                dp[i][j]=Math.min(dp[i+1][j],dp[i+1][j+1])+triangle.get(i).get(j);
+            }
+        }
+
+        return dp[0][0];
+
+
+    }
+
+
 }
