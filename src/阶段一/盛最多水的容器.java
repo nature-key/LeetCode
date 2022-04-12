@@ -22,4 +22,10 @@ public class 盛最多水的容器 {
         }
         return maxArea;
     }
+
+    public static void main(String[] args) {
+        int [] nums = {1,2,3};
+        int i=1;
+        System.out.println(nums[i++]);
+    }
 }

@@ -2,7 +2,12 @@ package 阶段一;
 
 public class 搜索旋转数组 {
 
-
+    /**
+     * https://leetcode-cn.com/problems/search-rotate-array-lcci/solution/er-fen-fa-by-armeria-program/
+     * @param nums
+     * @param target
+     * @return
+     */
     public int search(int[] nums, int target) {
 
         int l = 0;

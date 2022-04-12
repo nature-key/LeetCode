@@ -2,7 +2,7 @@ package 阶段一;
 
 import java.util.Arrays;
 
-public class 比特位计数 {
+    public class 比特位计数 {
 
     /**
      * 对于一个2的幂次方的数i，i与i-1的逻辑与(&)结果为0，即res[i & i-1] = res[0];，
@@ -13,6 +13,7 @@ public class 比特位计数 {
      * 因此
      *     res[k] = res[k-1]+1=res[k&k-1]+1;
      *
+     * https://leetcode-cn.com/problems/counting-bits/solution/hen-qing-xi-de-si-lu-by-duadua/
      * @param n
      * @return
      */

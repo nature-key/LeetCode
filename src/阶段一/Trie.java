@@ -24,7 +24,7 @@ public class Trie {
 
     public boolean search(String word){
         TrieNode curent=find(word);
-        return curent==null&&curent.isWord;
+        return curent!=null&&curent.isWord;
 
     }
 
