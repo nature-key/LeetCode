@@ -23,7 +23,7 @@ public class 打家劫舍2 {
         for (int i = start+2; i <= end; i++) {
             int temp =second;
             second=Math.max(first+nums[i],second);
-            first=second;
+            first=temp;
         }
 
         return second;

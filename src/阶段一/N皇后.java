@@ -43,8 +43,6 @@ public class N皇后 {
                 col.remove(i);
                 pie.remove(pievalue);
                 na.remove(naValue);
-
-
             }
 
 

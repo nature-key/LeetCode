@@ -25,7 +25,8 @@ public class 电话号码的字母组合 {
     }
 
 
-    public void dfs(String s, int level, Map<Character, String> map, List<String> list, String digest) {
+    public void dfs(String s, int level, Map<Character, String> map,
+                    List<String> list, String digest) {
         if (level == digest.length()) {
             list.add(s);
             return;

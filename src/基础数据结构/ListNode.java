@@ -10,6 +10,8 @@ public class ListNode {
         this.value = value;
     }
 
+    public ListNode(int val, ListNode next) { this.value = val; this.next = next; }
+
     public int getValue() {
         return value;
     }

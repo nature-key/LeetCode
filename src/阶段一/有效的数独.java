@@ -26,10 +26,10 @@ public class 有效的数独 {
 
     private static boolean isValied(char[][] board, int i, int j, char c) {
         for (int k = 0; k < 9; k++) {
-            if (board[k][i] != '.' && board[k][i] == c) {
+            if (board[i][k] != '.' && board[i][k] == c) {
                 return false;
             }
-            if (board[j][k] != '.' && board[j][k] == c) {
+            if (board[k][j] != '.' && board[k][j] == c) {
                 return false;
             }
             if (board[3 * (i / 3) + k / 3][3 * (j / 3) + k % 3] != '.'

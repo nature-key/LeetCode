@@ -20,12 +20,12 @@ public class 子集 {
             ans.add(list);
         }
 
-        dfs(ans,nums,list,index+1);
+        dfs(ans,nums,list,index+1);//不选数组元素
 
         list.add(nums[index]);
-        dfs(ans,nums,list,index+1);
+        dfs(ans,nums,list,index+1);//选择数组元素
 
-        list.remove(list.size()-1);
+        list.remove(list.size()-1);//状态还原
     }
 
 }
