@@ -97,33 +97,30 @@ public class N皇后 {
             result.add(list);
             return;
         }
-        for (int i = 0; i <n ; i++) {
-            if(col.contains(i)){
+        for (int i = 0; i < n; i++) {
+            if (col.contains(i)) {
                 continue;
             }
-            int p=row+i;
-            if(pie.contains(p)){
+            int p = row + i;
+            if (pie.contains(p)) {
                 continue;
             }
-            int ne =row-i;
-            if(na.contains(ne)){
+            int ne = row - i;
+            if (na.contains(ne)) {
                 continue;
             }
-            queue[row]=i;
+            queue[row] = i;
             col.add(i);
             pie.add(p);
             na.add(ne);
-            dfs(result,queue,n,row+1,col,pie,na);
-            queue[row]=-1;
+            dfs(result, queue, n, row + 1, col, pie, na);
+            queue[row] = -1;
             col.remove(i);
             pie.remove(p);
             na.remove(ne);
 
 
         }
-
-
-
 
 
     }
@@ -137,6 +134,67 @@ public class N皇后 {
             board.add(row.toString());
         }
         return board;
+    }
+
+
+    public List<List<String>> solveNQueens2(int n) {
+        List<List<String>> result = new ArrayList<>();
+
+        int[] queues = new int[n];
+
+        Arrays.fill(queues, -1);
+
+        Set<Integer> cols = new HashSet<>();
+        Set<Integer> pie = new HashSet<>();
+        Set<Integer> na = new HashSet<>();
+
+        dfs1(result, queues, cols, pie, na, 0, n);
+        return result;
+    }
+
+    private void dfs1(List<List<String>> result, int[] queues, Set<Integer> cols,
+                      Set<Integer> pie, Set<Integer> na, int row, int n) {
+        if (row == n) {
+            List<String> res = gen(queues, n);
+            result.add(res);
+            return;
+        } else {
+            for (int i = 0; i < n; i++) {
+                if (cols.contains(i)) {
+                    continue;
+                }
+                int p = row + i;
+                if (pie.contains(p)) {
+                    continue;
+                }
+                int ne = row - i;
+                if (na.contains(ne)) {
+                    continue;
+                }
+                queues[row] = i;
+                cols.add(i);
+                na.add(ne);
+                pie.add(p);
+                dfs1(result, queues, cols, pie, na,
+                        row + 1, n);
+                cols.remove(i);
+                na.remove(ne);
+                pie.remove(p);
+            }
+
+
+        }
+    }
+
+    private List<String> gen(int[] queues, int n) {
+        List<String> result = new ArrayList<>();
+        for (int i = 0; i < n; i++) {
+            char[] row = new char[n];
+            Arrays.fill(row, '.');
+            row[queues[i]] = 'Q';
+            result.add(row.toString());
+        }
+        return result;
     }
 
 
