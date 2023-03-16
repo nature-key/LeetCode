@@ -2,7 +2,7 @@ package 阶段一;
 
 import java.util.Arrays;
 
-public class 不同路径 {
+public class   不同路径 {
 
     public int uniquePaths(int m, int n) {
         int[][] dp = new int[m][n];

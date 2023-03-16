@@ -3,7 +3,8 @@ package 基础数据结构;
 /**
  * 二叉搜索树
  */
-public class BinaryTree {
+
+public class BinaryTree  {
 
     public TreeNode root = null;
 
